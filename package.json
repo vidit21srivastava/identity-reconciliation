@@ -2,7 +2,7 @@
   "name": "identity-reconciliation",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch \"src/**/*.ts\" --exec ts-node src/index.ts",
     "db:generate": "prisma generate",
