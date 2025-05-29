@@ -3,7 +3,7 @@ services:
     name: identity-reconciliation
     env: node
     plan: free
-    buildCommand: npm install && npx prisma generate && npm run build
+    buildCommand: npm install && npm install typescript --save-dev && npx prisma generate && npx tsc
     startCommand: npm start
     envVars:
       - key: NODE_ENV
@@ -15,4 +15,4 @@ services:
 
 databases:
   - name: bitespeed-db
-    plan: free
+    plan: free    
