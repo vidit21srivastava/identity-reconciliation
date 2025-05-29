@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: identity-reconciliation
+    env: node
+    plan: free
+    buildCommand: npm install && npx prisma generate && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: bitespeed-db
+          property: connectionString
+
+databases:
+  - name: bitespeed-db
+    plan: free

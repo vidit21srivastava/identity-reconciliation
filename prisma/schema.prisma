@@ -8,17 +8,17 @@ datasource db {
 }
 
 model Contact {
-  id             Int      @id @default(autoincrement())
+  id             Int       @id @default(autoincrement())
   phoneNumber    String?
   email          String?
   linkedId       Int?
-  linkPrecedence String   // "primary" or "secondary"
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  linkPrecedence String    // "primary" or "secondary"
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
   deletedAt      DateTime?
 
-  // Self-referential relation
-  linkedTo       Contact? @relation("ContactLink", fields: [linkedId], references: [id])
+  // self-relation
+  linkedTo       Contact?  @relation("ContactLink", fields: [linkedId], references: [id])
   linkedFrom     Contact[] @relation("ContactLink")
 
   @@map("contacts")
