@@ -36,7 +36,7 @@ app.use(errorHandler);
 const server = app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-
+// Shutdown
 process.on('SIGTERM', async () => {
     console.log('SIGTERM received, shutting down....');
     server.close(() => {
