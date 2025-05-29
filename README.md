@@ -46,6 +46,9 @@ identity-reconciliation/
 ├── Dockerfile                     
 └── README.md                       
 ```
+## Workflow
+
+![workings](/assest/img4.png)
 ## API Documentation
 
 ### **Headers**
